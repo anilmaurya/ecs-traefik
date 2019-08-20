@@ -1,0 +1,34 @@
+defaultEntryPoints = ["https", "http"]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+  [entryPoints.https]
+  address = ":443"
+  [entryPoints.https.tls]
+  [entryPoints.bar]
+  address = ":8080"
+
+[api]
+entryPoint = "bar"
+dashboard = true
+
+[ecs]
+clusters = ["CLUSTER_NAME"]
+watch = true
+domain = "DOMAIN_NAME"
+autoDiscoverClusters = false
+refreshSeconds = 15
+exposedByDefault = true
+region = "ap-south-1"
+accessKeyID = "YOUR_KEY"
+secretAccessKey = "YOUR_SECRET"
+[acme]
+email = "anilmaurya8dec@email.com"
+storage = "acme.json"
+entryPoint = "https"
+onHostRule = true
+[acme.httpChallenge]
+entryPoint = "http"
