@@ -1,5 +1,9 @@
 # ecs-traefik
 
+## Deploy Traefik on ECS
+
+### Run following command in console
+
 export AWS_REGION='YOUR_AWS_REGION'
 
 export AWS_ACCOUNT_ID='YOUR_AWS_ACCOUNT_ID'
